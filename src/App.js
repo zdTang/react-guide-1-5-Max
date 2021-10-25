@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+//import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses"
 function App() {
   const DUMMY_EXPENSES = [
     {
@@ -22,21 +23,24 @@ function App() {
     },
   ];
 
-  let res = [];
+  // let res = [];
 
-  DUMMY_EXPENSES.forEach((element, index) => {
-    let singleItem = (
-      <ExpenseItem
-        key={index}
-        date={element.date}
-        title={element.title}
-        amount={element.amount}
-      />
-    );
-    res.push(singleItem);
-  });
+  // DUMMY_EXPENSES.forEach((element, index) => {
+  //   let singleItem = (
+  //     <ExpenseItem
+  //       key={index}
+  //       date={element.date}
+  //       title={element.title}
+  //       amount={element.amount}
+  //     />
+  //   );
+  //   res.push(singleItem);
+  //
 
-  return <div>{res}</div>;
+  //return <div>{res}</div>;
+  return <div>
+    <Expenses items={DUMMY_EXPENSES}/>
+  </div>
 }
 
 export default App;
