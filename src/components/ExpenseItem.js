@@ -2,7 +2,11 @@ import './ExpenseItem.css'   // this used to make React to be aware of the css f
 import ExpenseDate from './ExpenseDate';
 import Card from './Card'
 const ExpenseItem=(props)=> {
-    //short-cut:  shift + alt + f => manage format
+  
+  // create an event handler
+  const clickHandler =()=>{
+    alert("clicked")
+  }
 
   return (
     <Card className="expense-item">
@@ -11,6 +15,8 @@ const ExpenseItem=(props)=> {
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
+      {/* add event to a button */}
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 }
