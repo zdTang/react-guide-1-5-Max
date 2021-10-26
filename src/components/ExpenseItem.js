@@ -1,7 +1,7 @@
 import './ExpenseItem.css'   // this used to make React to be aware of the css file
 import ExpenseDate from './ExpenseDate';
 import Card from './Card'
-function ExpenseItem(props) {
+const ExpenseItem=(props)=> {
     //short-cut:  shift + alt + f => manage format
 
   return (
