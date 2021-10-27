@@ -5,24 +5,35 @@ const ExpenseForm = (props) => {
   //enteredTitle is current value
   //once setEnterTitle is run, the whole component will re-render
   //Everything read from the webpage is string
-  const [enteredTitle,setEnteredTitle] = useState('')
-  const [enteredAmount,setEnteredAmount] = useState('')
-  const [enteredDate,setEnteredDate] = useState('')
+  const [userInput,setUserInput]=useState({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+  })
+  // const [enteredTitle,setEnteredTitle] = useState({})
+  // const [enteredAmount,setEnteredAmount] = useState('')
+  // const [enteredDate,setEnteredDate] = useState('')
   
   const titleChangeHandler = (e) => {
-    console.log(e.target.value)
-    setEnteredTitle(e.target.value)
+    setUserInput({
+      ...userInput,                //  put the old value here
+      enteredTitle:e.target.value  //  cover the specified value
+    })
   };
-  console.log("enteredTitle:==",enteredTitle)
+
 
   const amountChangeHandler=(e)=>{
-    setEnteredAmount(e.target.value)
-    console.log(e.target.value)
+    setUserInput({
+      ...userInput,
+      enteredAmount:e.target.value
+    })
   }
 
   const dateChangeHandler=(e)=>{
-    setEnteredDate(e.target.value)
-    console.log(e.target.value)
+    setUserInput({
+      ...userInput,
+      enteredDate:e.target.value
+    })
   }
 
 
