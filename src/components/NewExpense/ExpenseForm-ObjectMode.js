@@ -14,26 +14,50 @@ const ExpenseForm = (props) => {
   // const [enteredAmount,setEnteredAmount] = useState('')
   // const [enteredDate,setEnteredDate] = useState('')
   
-  const titleChangeHandler = (e) => {
-    setUserInput({
-      ...userInput,                //  put the old value here
-      enteredTitle:e.target.value  //  cover the specified value
-    })
-  };
+  // const titleChangeHandler = (e) => {
+  //   setUserInput({
+  //     ...userInput,                //  put the old value here
+  //     enteredTitle:e.target.value  //  cover the specified value
+  //   })
+  // };
 
 
-  const amountChangeHandler=(e)=>{
-    setUserInput({
-      ...userInput,
+/*Use function mode can guarantee the value is always latest */
+
+  const titleChangeHandler = e => {
+    setUserInput(prevState=>{return{
+      ...prevState,
+      enteredTitle:e.target.value
+      }})
+  }
+  
+
+  // const amountChangeHandler=(e)=>{
+  //   setUserInput({
+  //     ...userInput,
+  //     enteredAmount:e.target.value
+  //   })
+  // }
+
+  const amountChangeHandler=e=>{
+    setUserInput(prevState=>{return {
+      ...prevState,
       enteredAmount:e.target.value
-    })
+    }})
   }
 
+  // const dateChangeHandler=(e)=>{
+  //   setUserInput({
+  //     ...userInput,
+  //     enteredDate:e.target.value
+  //   })
+  // }
+
   const dateChangeHandler=(e)=>{
-    setUserInput({
-      ...userInput,
+    setUserInput(prevState=>{return {
+      ...prevState,
       enteredDate:e.target.value
-    })
+    }})
   }
 
 
