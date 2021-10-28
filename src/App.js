@@ -39,8 +39,14 @@ const App=()=> {
   //
 
   //return <div>{res}</div>;
+
+  const addExpenseHandler=(data)=>{
+    console.log("App: ",data)
+  }
   return <div>
-    <NewExpense />
+    {/* this 'onData' will be called by Son component */}
+    {/* Once called by Son, it will call it's dealData */}
+    <NewExpense onAddExpense={addExpenseHandler}/>    
     <Expenses items={DUMMY_EXPENSES}/>
   </div>
 }

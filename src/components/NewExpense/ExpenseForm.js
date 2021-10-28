@@ -36,6 +36,7 @@ const ExpenseForm = (props) => {
       date:new Date(enteredDate)
     }
     console.log(expense)
+    props.onSaveExpenseData(expense) //  use props to pass data to Parent
     //after submission, reset the form value as empty
     setEnteredTitle("")
     setEnteredAmount("")
