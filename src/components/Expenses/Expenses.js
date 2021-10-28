@@ -23,11 +23,11 @@ const Expenses=(props)=> {
       {/*ExpensesFilter has two props, one is pass down, another one is pass up  */}
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
       {/* must in the {} as it is a JS expression other than JSX */}
-      {props.items.map((expense,index)=> <ExpenseItem
+      {props.items.map((expense)=> <ExpenseItem
         title={expense.title}
         amount={expense.amount}
         date={expense.date}
-        key={index}
+        key={expense.id}  //  add a key is very important or the react will render the whole array
       />)}
     </Card>
   );
