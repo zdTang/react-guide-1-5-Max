@@ -24,11 +24,23 @@ const ExpenseForm = (props) => {
     setEnteredDate(e.target.value)
     console.log(e.target.value)
   }
-
+// Once clicking the Submit button
+// the browser's from element will emit a 'submit' event
+// and the browser also send another request to the Host of current webpage
+// we can use 'event' to prevent this happen
+  const submitHandler=(event)=>{
+    event.preventDefault();         //  prevent sent new request to the HOST
+    const expense={
+      title:enteredTitle,
+      amount:enteredAmount,
+      date:new Date(enteredDate)
+    }
+    console.log(expense)
+  }
 
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
